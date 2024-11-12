@@ -4,6 +4,9 @@
  */
 package com.mycompany.proyectofinprogra;
 
+import javax.swing.*;
+import java.awt.*;
+
 /**
  *
  * @author joel2
@@ -16,6 +19,21 @@ public class SistemaGestionGen extends javax.swing.JFrame {
      */
     public SistemaGestionGen() {
         initComponents();
+        // Configuración del JFrame
+//        setTitle("Botón con Imagen");
+//        setSize(400, 300);
+//        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        setLayout(new FlowLayout());
+//
+//        // Crear un botón
+//        JButton botonConImagen = new JButton();
+//
+//        // Cargar la imagen desde la misma carpeta
+//        ImageIcon icon = new ImageIcon("REGISTRAR EVENTO (1).jpg");
+//        botonConImagen.setIcon(icon); // Asignar la imagen como icono del botón
+//
+//        // Agregar el botón al JFrame
+//        add(botonConImagen);
     }
 
     /**
@@ -76,7 +94,6 @@ public class SistemaGestionGen extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 350, 40));
 
         jButton1.setForeground(new java.awt.Color(0, 51, 204));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/proyectofinprogra/REGISTRAR EVENTO (1).jpg"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -97,7 +114,6 @@ public class SistemaGestionGen extends javax.swing.JFrame {
         jLabel4.setText("Registrar evento");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 160, 30));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/proyectofinprogra/VER EVENTO.jpg"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -109,7 +125,6 @@ public class SistemaGestionGen extends javax.swing.JFrame {
         jLabel5.setText("Registrar personas a eventos");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 400, 240, 30));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/proyectofinprogra/REGISTRAR PERSONA.jpg"))); // NOI18N
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -121,7 +136,6 @@ public class SistemaGestionGen extends javax.swing.JFrame {
         jLabel6.setText("Registrar persona");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 110, -1, 30));
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/proyectofinprogra/abdee427-c5af-447d-b1ee-d7be1433ffaf.jpg"))); // NOI18N
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -143,15 +157,13 @@ public class SistemaGestionGen extends javax.swing.JFrame {
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 640, -1, 20));
 
         jButton4.setForeground(new java.awt.Color(0, 51, 204));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/proyectofinprogra/REGISTRAR EVENTO (1).jpg"))); // NOI18N
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 60, 60));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 60, 60));
 
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/proyectofinprogra/abdee427-c5af-447d-b1ee-d7be1433ffaf.jpg"))); // NOI18N
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
@@ -163,7 +175,11 @@ public class SistemaGestionGen extends javax.swing.JFrame {
         jLabel8.setText("Ver eventos registrados");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 240, 30));
 
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/proyectofinprogra/per ever.jpg"))); // NOI18N
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 450, 60, 60));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 580, -1, -1));
         getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 590, -1, -1));
@@ -189,11 +205,13 @@ public class SistemaGestionGen extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        RegistroDePersonas  registropersonas = new RegistroDePersonas();
+        registropersonas.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        EventosRegistrados eventoregistrado = new EventosRegistrados();
+        eventoregistrado.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -201,12 +219,20 @@ public class SistemaGestionGen extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+    RegistroNuevoEvent registroNuevoEvent = new RegistroNuevoEvent();
+    
+    registroNuevoEvent.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+        PersonasRegistradas  personaregistrada = new PersonasRegistradas();
+        personaregistrada.setVisible(true);
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        RegistrarPersonasAlEvento registrarEventoPersona = new RegistrarPersonasAlEvento();
+        registrarEventoPersona.setVisible(true);
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
      * @param args the command line arguments

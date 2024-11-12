@@ -21,6 +21,7 @@ com\mycompany\proyectofinprogra\SistemaGestionGen$6.class
 com\mycompany\proyectofinprogra\RegistroNuevoEvent$6.class
 com\mycompany\proyectofinprogra\PersonasRegistradas$2.class
 com\mycompany\proyectofinprogra\RegistrarPersonasAlEvento.class
+com\mycompany\proyectofinprogra\servicesUtils\ApiService.class
 com\mycompany\proyectofinprogra\RegistroDePersonas$1.class
 com\mycompany\proyectofinprogra\RegistroDePersonas.class
 com\mycompany\proyectofinprogra\SistemaGestionGen.class
@@ -34,4 +35,6 @@ com\mycompany\proyectofinprogra\RegistrarPersonasAlEvento$1.class
 com\mycompany\proyectofinprogra\RegistroDePersonas$8.class
 com\mycompany\proyectofinprogra\RegistroNuevoEvent$8.class
 com\mycompany\proyectofinprogra\SistemaGestionGen$4.class
+com\mycompany\proyectofinprogra\model\Persona.class
 com\mycompany\proyectofinprogra\RegistroNuevoEvent$3.class
+com\mycompany\proyectofinprogra\SistemaGestionGen$9.class

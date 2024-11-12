@@ -4,6 +4,16 @@
  */
 package com.mycompany.proyectofinprogra;
 
+import com.mycompany.proyectofinprogra.servicesUtils.ApiService;
+import java.awt.*;
+import org.json.JSONObject;
+
+import javax.swing.*;
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.regex.Pattern;
+
 /**
  *
  * @author joel2
@@ -55,12 +65,8 @@ public class RegistroDePersonas extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/proyectofinprogra/REGISTRAR PERSONA.jpg"))); // NOI18N
-
         jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 0, 24)); // NOI18N
         jLabel2.setText("Registro de Personas");
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/proyectofinprogra/admiracion.jpg"))); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
         jLabel4.setText("Informacion Personal");
@@ -108,8 +114,6 @@ public class RegistroDePersonas extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Yu Gothic", 0, 14)); // NOI18N
         jLabel9.setText("Informacion de Contacto");
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/proyectofinprogra/admiracion.jpg"))); // NOI18N
-
         jLabel11.setFont(new java.awt.Font("Yu Gothic", 0, 14)); // NOI18N
         jLabel11.setText("Correo Electronico");
 
@@ -132,8 +136,6 @@ public class RegistroDePersonas extends javax.swing.JFrame {
 
         jLabel13.setFont(new java.awt.Font("Yu Gothic", 0, 14)); // NOI18N
         jLabel13.setText("Informacion Adicional");
-
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/proyectofinprogra/admiracion.jpg"))); // NOI18N
 
         jLabel15.setFont(new java.awt.Font("Yu Gothic", 0, 14)); // NOI18N
         jLabel15.setText("Observaciones");
@@ -296,13 +298,68 @@ public class RegistroDePersonas extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField6ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+         // Obtener datos de los campos de texto
+    // Validar que los campos de texto no estén vacíos
+    if (jTextField2.getText().trim().isEmpty() || 
+        jTextField3.getText().trim().isEmpty() ||
+        jTextField1.getText().trim().isEmpty() ||
+        jTextField4.getText().trim().isEmpty() ||
+        jTextField5.getText().trim().isEmpty() ||
+        jTextField6.getText().trim().isEmpty() ||
+        jTextArea1.getText().trim().isEmpty()) {
+        
+        JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    } 
+
+    // Obtener datos de los campos de texto
+    String nombres = jTextField2.getText();
+    String apellidos = jTextField3.getText();
+    String tipoDocumento = "DPI";
+    String numeroDocumento = jTextField1.getText();
+    String email = jTextField4.getText();
+    String telefono = jTextField5.getText();
+    String direccion = jTextField6.getText();
+    String estado = "activo";
+
+    // Construir el JSON manualmente
+    String jsonBody = String.format(
+        "{" +
+        "\"nombres\":\"%s\"," +
+        "\"apellidos\":\"%s\"," +
+        "\"tipoDocumento\":\"%s\"," +
+        "\"numeroDocumento\":\"%s\"," +
+        "\"email\":\"%s\"," +
+        "\"telefono\":\"%s\"," +
+        "\"direccion\":\"%s\"," +
+        "\"estado\":\"%s\"" +
+        "}",
+        nombres, apellidos, tipoDocumento, numeroDocumento, email, telefono, direccion, estado
+    );
+
+    // URL de la API
+//    String apiUrl = "https://578e-2803-d100-e4a0-2c44-ad4b-77ca-97f0-7854.ngrok-free.app/api/personas";
+    String apiUrl = "http://localhost:8080/api/personas";
+
+    // Crear una instancia de ApiService
+    ApiService apiService = new ApiService();
+
+    // Hacer la solicitud en un hilo separado para no bloquear la interfaz
+    new Thread(() -> {
+        try {
+            String response = apiService.post(apiUrl, jsonBody);
+            SwingUtilities.invokeLater(() -> JOptionPane.showMessageDialog(this, "Respuesta de la API: " + response));
+        } catch (IOException e) {
+            SwingUtilities.invokeLater(() -> JOptionPane.showMessageDialog(this, "Error al enviar los datos: " + e.getMessage()));
+        }
+    }).start();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    
     /**
      * @param args the command line arguments
      */

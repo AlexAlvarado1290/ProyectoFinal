@@ -12,7 +12,7 @@ public class ProyectoFinProgra {
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
-    RegistroNuevoEvent principal = new RegistroNuevoEvent();
+    SistemaGestionGen principal = new SistemaGestionGen();
     principal.show();
     }
 }

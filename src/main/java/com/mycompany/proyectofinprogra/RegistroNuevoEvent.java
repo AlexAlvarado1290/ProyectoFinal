@@ -50,12 +50,8 @@ public class RegistroNuevoEvent extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/proyectofinprogra/REGISTRAR EVENTO (1).jpg"))); // NOI18N
-
         jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 0, 24)); // NOI18N
         jLabel2.setText("Registro de evento nuevo");
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/proyectofinprogra/admiracion.jpg"))); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
         jLabel4.setText("Informacion Basica");
@@ -82,8 +78,6 @@ public class RegistroNuevoEvent extends javax.swing.JFrame {
                 jTextField3ActionPerformed(evt);
             }
         });
-
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/proyectofinprogra/admiracion.jpg"))); // NOI18N
 
         jLabel9.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
         jLabel9.setText("Detalles Adicionales");
@@ -231,7 +225,7 @@ public class RegistroNuevoEvent extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         pack();

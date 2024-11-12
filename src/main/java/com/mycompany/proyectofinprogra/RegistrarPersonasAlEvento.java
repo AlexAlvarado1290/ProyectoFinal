@@ -36,8 +36,6 @@ public class RegistrarPersonasAlEvento extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/proyectofinprogra/per ever.jpg"))); // NOI18N
-
         jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 0, 24)); // NOI18N
         jLabel2.setText("Registrar Personas al Evento");
 
